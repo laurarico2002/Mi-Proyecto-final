@@ -43,6 +43,9 @@
             padding: 20px 0;
         }
     </style>
+       
+   
+   
 </head>
 <body>
     <!-- Navbar -->
@@ -86,13 +89,23 @@
     <div class="container">
         <div class="row">
             <div class="col-md-8">
+                <?php
+                include("../Config/conexion.php");
+                $query = "SELECT * FROM perritosdisponibles WHERE ID= 1";
+                    $resultado = $conexion->query($query);
+
+                    if ($resultado->num_rows > 0){
+
+                        while ($row = $resultado->fetch_assoc()){
+                ?>
                 <h2>Conoce a COCO</h2>
 
-                <table>
+                <table class="table">
                     <thead>
                         <tr>
                             <th>EDAD</th>
                             <th>SEXO</th>
+                            <th>RAZA</th>
                             <th>COLOR</th>
                             <th>TAMAÑO</th>
                             <th>ESTADO DE SALUD</th>
@@ -102,17 +115,20 @@
                     </thead>
                     <tbody>
                         <tr>
-                            <td>5 años</td>
-                            <td>Macho</td>
-                            <td>Café</td>
-                            <td>Mediano</td>
-                            <td>Bueno</td>
-                            <td>Si</td>
-                            <td>Si</td>
+                            <td><?php echo $row['Edad']; ?></td>
+                            <td><?php echo $row['Genero']; ?></td>
+                            <td><?php echo $row['Raza']; ?></td>
+                            <td><?php echo $row['Color']; ?></td>
+                            <td><?php echo $row['Tamaño']; ?></td>
+                            <td><?php echo $row['Estado_Salud']; ?></td>
+                            <td><?php echo $row['Vacunado']; ?></td>
+                            <td><?php echo $row['Operado']; ?></td>
                         </tr>
                         <!-- Puedes agregar más filas según sea necesario -->
                     </tbody>
+                    
                 </table>
+               
 
                 <!-- Cards adicionales -->
                 <div class="row mt-4">
@@ -125,25 +141,35 @@
                             </div>
                         </div>
                     </div>
-
+                    
                     <div class="col-md-6">
-    <div class="card">
-        <div class="card-body text-center">
-            <h5 class="card-title">Aplicar para su adopción</h5>
-            <p class="card-text">Si has tomado la decisión de adoptarme, visita el siguiente enlace donde encontrarás los requisitos, el proceso de adopción y el formulario para postularte.</p>
-            <a href="#" class="btn btn-primary">Ver más</a>
-        </div>
-    </div>
-</div>
+                        <div class="card">
+                            <div class="card-body text-center">
+                                <h5 class="card-title">Aplicar para su adopción</h5>
+                                    <p class="card-text">Si has tomado la decisión de adoptarme, visita el siguiente enlace donde encontrarás los requisitos, el proceso de adopción y el formulario para postularte.</p>
+                                        <a href="#" class="btn btn-primary">Ver más</a>
+                            </div>
+                        </div>
+                    </div>
 
                 </div>
+                <?php 
+                        }
+            $resultado->free();
+            } else {
+                echo "No hay resultados";
+
+            } 
+            ?>
             </div>
 
             <div class="col-md-4">
-                <img src="../img/coco.jpg" alt="Imagen" class="custom-image">
-            </div>
-        </div>
-    </div>
+                <img src="../img/coco.jpg" alt="Imagen" class="custom-image img-fluid">
+                    </div>
+
+                </div>
+                </div>
+   
 
     <!-- Footer -->
     <footer class="container">
@@ -154,4 +180,6 @@
     <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.6/dist/umd/popper.min.js"></script>
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
 </body>
+
 </html>
+ 

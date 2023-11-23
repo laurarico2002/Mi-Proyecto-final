@@ -87,13 +87,23 @@
     <div class="container">
         <div class="row">
             <div class="col-md-8">
+            <?php
+                include("../Config/conexion.php");
+                $query = "SELECT * FROM perritosdisponibles WHERE ID= 4";
+                    $resultado = $conexion->query($query);
+
+                    if ($resultado->num_rows > 0){
+
+                        while ($row = $resultado->fetch_assoc()){
+                ?>
                 <h2>Conoce a PEKI</h2>
 
-                <table>
+                <table class="table">
                     <thead>
                         <tr>
                             <th>EDAD</th>
                             <th>SEXO</th>
+                            <th>RAZA</th>
                             <th>COLOR</th>
                             <th>TAMAÑO</th>
                             <th>ESTADO DE SALUD</th>
@@ -103,13 +113,14 @@
                     </thead>
                     <tbody>
                         <tr>
-                            <td>9 años</td>
-                            <td>Macho</td>
-                            <td>Café claro</td>
-                            <td>Grande</td>
-                            <td>Bueno</td>
-                            <td>Si</td>
-                            <td>Si</td>
+                        <td><?php echo $row['Edad']; ?></td>
+                            <td><?php echo $row['Genero']; ?></td>
+                            <td><?php echo $row['Raza']; ?></td>
+                            <td><?php echo $row['Color']; ?></td>
+                            <td><?php echo $row['Tamaño']; ?></td>
+                            <td><?php echo $row['Estado_Salud']; ?></td>
+                            <td><?php echo $row['Vacunado']; ?></td>
+                            <td><?php echo $row['Operado']; ?></td>
                         </tr>
                         <!-- Puedes agregar más filas según sea necesario -->
                     </tbody>
@@ -138,6 +149,14 @@
 </div>
 
                 </div>
+                <?php 
+                        }
+            $resultado->free();
+            } else {
+                echo "No hay resultados";
+
+            } 
+            ?>
             </div>
 
             <div class="col-md-4">

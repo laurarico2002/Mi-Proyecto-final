@@ -9,7 +9,25 @@
     <!-- Enlazamos Bootstrap desde el CDN -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
     <!-- Estilo personalizado -->
-   
+    <style>
+    .card {
+    margin: 20px;
+}
+
+.jumbotron {
+    background-image: url('https://i.imgur.com/5wVviYz.jpg');
+    background-size: cover;
+    color: white;
+}
+
+footer {
+    margin-top: 20px;
+    padding: 10px;
+    background-color: #f3d9ff;
+    text-align: center;
+}
+
+</style>
 </head>
 
 <body>
@@ -58,11 +76,14 @@
   
         <div class="row">
         <?php
-            include("../Config/conexion.php");
-                $query = "SELECT * FROM perritosdisponibles";
+                include("../Config/conexion.php");
+                $query = "SELECT * FROM perritosdisponibles WHERE ID= 1";
                     $resultado = $conexion->query($query);
+
+                    if ($resultado->num_rows > 0){
+
                         while ($row = $resultado->fetch_assoc()){
-    ?>
+                ?>
                 <div class="col-md-4 mb-4">
                     <div class="card h-100">
                         <img src="../img/coco.jpg" class="card-img-top img-fluid" alt="Coco - 5 años" style="object-fit: cover; height: 200px;">
@@ -72,11 +93,28 @@
                             <p><?php echo $row['Descripcion']; ?></p>
                             <a href="coco.php" class="btn btn-primary">Conóceme!</a>
                         </div>
+                        <?php 
+                        }
+            $resultado->free();
+            } else {
+                echo "No hay resultados";
+
+            } 
+            ?>
                 </div>
             
         </div>
             
             <div class="col-md-4 mb-4">
+            <?php
+                include("../Config/conexion.php");
+                $query = "SELECT * FROM perritosdisponibles WHERE ID= 9";
+                    $resultado = $conexion->query($query);
+
+                    if ($resultado->num_rows > 0){
+
+                        while ($row = $resultado->fetch_assoc()){
+                ?>
                 <div class="card h-100">
                     <img src="../img/luna.jpg" class="card-img-top img-fluid" alt="Luna - 6 meses" style="object-fit: cover; height: 200px;">
                     <div class="card-body text-center">
@@ -85,10 +123,27 @@
                             <p><?php echo $row['Descripcion']; ?></p>
                         <a href="luna.php" class="btn btn-primary">Conóceme!</a>
                     </div>
+                    <?php 
+                        }
+            $resultado->free();
+            } else {
+                echo "No hay resultados";
+
+            } 
+            ?>
                 </div>
             </div>
 
             <div class="col-md-4 mb-4">
+            <?php
+                include("../Config/conexion.php");
+                $query = "SELECT * FROM perritosdisponibles WHERE ID= 10";
+                    $resultado = $conexion->query($query);
+
+                    if ($resultado->num_rows > 0){
+
+                        while ($row = $resultado->fetch_assoc()){
+                ?>
                 <div class="card h-100">
                     <img src="../img/galan.jpg" class="card-img-top img-fluid" alt="GALÁN - 3 años" style="object-fit: cover; height: 200px;">
                     <div class="card-body text-center">
@@ -98,76 +153,199 @@
                         <a href="galan.php" class="btn btn-primary">Conóceme!</a>
                     </div>
                 </div>
+                <?php 
+                        }
+            $resultado->free();
+            } else {
+                echo "No hay resultados";
+
+            } 
+            ?>
+             
             </div>
         </div>
 
         <div class="row">
+        <?php
+                include("../Config/conexion.php");
+                $query = "SELECT * FROM perritosdisponibles WHERE ID= 3";
+                    $resultado = $conexion->query($query);
+
+                    if ($resultado->num_rows > 0){
+
+                        while ($row = $resultado->fetch_assoc()){
+                ?>
             <div class="col-md-4 mb-4">
                 <div class="card h-100">
                     <img src="../img/rey.jpg" class="card-img-top img-fluid" alt="REY - 5 meses" style="object-fit: cover; height: 200px;">
                     <div class="card-body text-center">
-                        <h5 class="card-title">REY - 5 meses</h5>
+                    <h5><?php echo $row['NombrePerrito']; ?></h5>
+                            <p><?php echo $row['Edad']; ?></p>
+                            <p><?php echo $row['Descripcion']; ?></p>
                         <a href="rey.php" class="btn btn-primary">Conóceme!</a>
                     </div>
+                    <?php 
+                        }
+            $resultado->free();
+            } else {
+                echo "No hay resultados";
+
+            } 
+            ?>
                 </div>
             </div>
 
             <div class="col-md-4 mb-4">
+            <?php
+                include("../Config/conexion.php");
+                $query = "SELECT * FROM perritosdisponibles WHERE ID= 4";
+                    $resultado = $conexion->query($query);
+
+                    if ($resultado->num_rows > 0){
+
+                        while ($row = $resultado->fetch_assoc()){
+                ?>
                 <div class="card h-100">
                     <img src="../img/peki.jpeg" class="card-img-top img-fluid" alt="PEKI - 9 años" style="object-fit: cover; height: 200px;">
                     <div class="card-body text-center">
-                        <h5 class="card-title">PEKI - 9 años</h5>
+                    <h5><?php echo $row['NombrePerrito']; ?></h5>
+                            <p><?php echo $row['Edad']; ?></p>
+                            <p><?php echo $row['Descripcion']; ?></p>
                         <a href="peki.php" class="btn btn-primary">Conóceme</a>
                     </div>
+                    <?php 
+                        }
+            $resultado->free();
+            } else {
+                echo "No hay resultados";
+
+            } 
+            ?>
                 </div>
             </div>
 
 
             <div class="col-md-4 mb-4">
+            <?php
+                include("../Config/conexion.php");
+                $query = "SELECT * FROM perritosdisponibles WHERE ID= 5";
+                    $resultado = $conexion->query($query);
+
+                    if ($resultado->num_rows > 0){
+
+                        while ($row = $resultado->fetch_assoc()){
+                ?>
                 <div class="card h-100">
                     <img src="../img/onix.jpg" class="card-img-top img-fluid" alt="ONIX - 4 años" style="object-fit: cover; height: 200px;">
                     <div class="card-body text-center">
-                        <h5 class="card-title">ONIX - 4 años</h5>
+                    <h5><?php echo $row['NombrePerrito']; ?></h5>
+                            <p><?php echo $row['Edad']; ?></p>
+                            <p><?php echo $row['Descripcion']; ?></p>
                         <a href="onix.php" class="btn btn-primary">Conóceme</a>
                     </div>
+                    <?php 
+                        }
+            $resultado->free();
+            } else {
+                echo "No hay resultados";
+
+            } 
+            ?>
                 </div>
             </div>
 
 
             <div class="col-md-4 mb-4">
+            <?php
+                include("../Config/conexion.php");
+                $query = "SELECT * FROM perritosdisponibles WHERE ID= 6";
+                    $resultado = $conexion->query($query);
+
+                    if ($resultado->num_rows > 0){
+
+                        while ($row = $resultado->fetch_assoc()){
+                ?>
                 <div class="card h-100">
                     <img src="../img/negro.jpg" class="card-img-top img-fluid" alt="NEGRO - 2 años" style="object-fit: cover; height: 200px;">
                     <div class="card-body text-center">
-                        <h5 class="card-title">NEGRO - 2 años</h5>
+                    <h5><?php echo $row['NombrePerrito']; ?></h5>
+                            <p><?php echo $row['Edad']; ?></p>
+                            <p><?php echo $row['Descripcion']; ?></p>
                         <a href="negro.php" class="btn btn-primary">Conóceme!</a>
                     </div>
+                    <?php 
+                        }
+            $resultado->free();
+            } else {
+                echo "No hay resultados";
+
+            } 
+            ?>
                 </div>
             </div>
 
 
             <div class="col-md-4 mb-4">
+            <?php
+                include("../Config/conexion.php");
+                $query = "SELECT * FROM perritosdisponibles WHERE ID= 7";
+                    $resultado = $conexion->query($query);
+
+                    if ($resultado->num_rows > 0){
+
+                        while ($row = $resultado->fetch_assoc()){
+                ?>
                 <div class="card h-100">
                     <img src="../img/copito.jpg" class="card-img-top img-fluid" alt="COPITO - 1 año" style="object-fit: cover; height: 200px;">
                     <div class="card-body text-center">
-                        <h5 class="card-title">COPITO - 1 año</h5>
+                    <h5><?php echo $row['NombrePerrito']; ?></h5>
+                            <p><?php echo $row['Edad']; ?></p>
+                            <p><?php echo $row['Descripcion']; ?></p>
                         <a href="copito.php" class="btn btn-primary">Conóceme!</a>
                     </div>
+                    <?php 
+                        }
+            $resultado->free();
+            } else {
+                echo "No hay resultados";
+
+            } 
+            ?>
                 </div>
             </div>
 
-
+            
             <div class="col-md-4 mb-4">
+            <?php
+                include("../Config/conexion.php");
+                $query = "SELECT * FROM perritosdisponibles WHERE ID= 8";
+                    $resultado = $conexion->query($query);
+
+                    if ($resultado->num_rows > 0){
+
+                        while ($row = $resultado->fetch_assoc()){
+                ?>
                 <div class="card h-100">
                     <img src="../img/gruñon.jpg" class="card-img-top img-fluid" alt="GRUÑON - 6 años" style="object-fit: cover; height: 200px;">
                     <div class="card-body text-center">
-                        <h5 class="card-title">GRUÑON - 6 años</h5>
+                    <h5><?php echo $row['NombrePerrito']; ?></h5>
+                            <p><?php echo $row['Edad']; ?></p>
+                            <p><?php echo $row['Descripcion']; ?></p>
                         <a href="gruñon.php" class="btn btn-primary">Conóceme!</a>
                     </div>
                 </div>
+                <?php 
+                        }
+            $resultado->free();
+            } else {
+                echo "No hay resultados";
+
+            } 
+            ?>
             </div>
         </div>
 
-        <?php } ?>   
+         
     </div>
 </main>
 
