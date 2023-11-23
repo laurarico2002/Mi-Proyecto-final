@@ -1,0 +1,16 @@
+.card {
+    margin: 20px;
+}
+
+.jumbotron {
+    background-image: url('https://i.imgur.com/5wVviYz.jpg');
+    background-size: cover;
+    color: white;
+}
+
+footer {
+    margin-top: 20px;
+    padding: 10px;
+    background-color: #f3d9ff;
+    text-align: center;
+}

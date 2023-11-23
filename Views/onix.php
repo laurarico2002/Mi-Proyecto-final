@@ -1,3 +1,5 @@
+
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -47,27 +49,37 @@
     <!-- Navbar -->
     <nav class="navbar navbar-expand-lg navbar-light bg-light">
         <div class="container">
-            <a class="navbar-brand" href="#">Fundación PetLove</a>
+            <!-- Logo de la Fundación -->
+            <a class="navbar-brand" href="#">
+                <img src="../img/logo.jpg" alt="Fundación PetLove Logo" height="30" class="d-inline-block align-text-top">
+                Fundación PetLove
+            </a>
+
             <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
                 <span class="navbar-toggler-icon"></span>
             </button>
+            
+
             <div class="collapse navbar-collapse" id="navbarNav">
                 <ul class="navbar-nav">
                     <li class="nav-item">
-                        <a class="nav-link" href="paginap.php">Inicio</a>
+                        <a class="nav-link" href="/MiProyecto/index.php">Inicio</a>
                     </li>
                     <li class="nav-item">
                         <a class="nav-link" href="Nosotros.php">Nosotros</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="#">Adopción</a>
+                        <a class="nav-link" href="adopciones.php">Adopción</a>
                     </li>
+
                     <li class="nav-item">
                         <a class="nav-link" href="#">Eventos</a>
                     </li>
                     <li class="nav-item">
                         <a class="nav-link" href="#">Contacto</a>
                     </li>
+
+                 
                 </ul>
             </div>
         </div>
@@ -76,7 +88,7 @@
     <div class="container">
         <div class="row">
             <div class="col-md-8">
-                <h2>Conoce a COCO</h2>
+                <h2>Conoce a ONIX</h2>
 
                 <table>
                     <thead>
@@ -92,9 +104,9 @@
                     </thead>
                     <tbody>
                         <tr>
-                            <td>5 años</td>
+                            <td>4 años</td>
                             <td>Macho</td>
-                            <td>Café</td>
+                            <td>Café claro</td>
                             <td>Mediano</td>
                             <td>Bueno</td>
                             <td>Si</td>
@@ -111,7 +123,7 @@
                            
                             <div class="card-body text-center">
                                 <h5 class="card-title">Mi historia</h5>
-                                <p class="card-text">Soy Coco, un pequeño mestizo con ojos llenos de esperanza. Fui abandonado en una caja en la puerta de la Fundación PetLove. A pesar de su difícil comienzo, su cola siempre estaba en movimiento, esperando el amor que tanto ansiaba.</p>
+                                <p class="card-text">Soy Onix, un hermoso criollito con ojos llenos de esperanza. Fui abandonado en una caja en la puerta de la Fundación PetLove. A pesar de mi difícil comienzo, su cola siempre estaba en movimiento, esperando el amor que tanto ansiaba.</p>
                             </div>
                         </div>
                     </div>
@@ -130,7 +142,7 @@
             </div>
 
             <div class="col-md-4">
-                <img src="img/coco.jpg" alt="Imagen" class="custom-image">
+                <img src="../img/onix.jpg" alt="Imagen" class="custom-image">
             </div>
         </div>
     </div>

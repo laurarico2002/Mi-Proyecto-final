@@ -1,35 +1,6 @@
 <?php
-    /*TODO: Inicializando la sesion del usuario */
-    session_start();
-
-    /*TODO: Iniciamos Clase Conectar */
-    class Conectar{
-        protected $dbh;
-
-        /*TODO: Funcion Protegida de la cadena de Conexion */
-        protected function Conexion(){
-            try {
-                //TODO: Cadena de Conexion QA/
-				$conectar = $this->dbh = new PDO("mysql:local=localhost;dbname=fundacion","root","");
-                //TODO: Cadena de Conexion Produccion/
-				return $conectar;
-			} catch (Exception $e) {
-                /*TODO: En Caso hubiera un error en la cadena de conexion */
-				print "¡Error BD!: " . $e->getMessage() . "<br/>";
-				die();
-			}
-        }
-
-        /*TODO: Para impedir que tengamos problemas con las ñ o tildes */
-        public function set_names(){
-            return $this->dbh->query("SET NAMES 'utf8'");
-        }
-
-        /*TODO: Ruta principal del proyecto */
-        public static function ruta(){
-            //ruta del proyecto
-            return "http://localhost/MiProyecto/";
-        }
-
-    }
-?>
+$servidor="localhost";
+$usuario="root";
+$password="";
+$db="fundacion";
+$conexion=mysqli_connect($servidor,$usuario,$password,$db)or die(mysqli_connect_error());

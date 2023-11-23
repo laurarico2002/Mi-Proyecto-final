@@ -1,5 +1,4 @@
 
-
 <!DOCTYPE html>
 <html lang="en">
 
@@ -31,25 +30,13 @@
             <div class="collapse navbar-collapse" id="navbarNav">
                 <ul class="navbar-nav">
                     <li class="nav-item">
-                        <a class="nav-link" href="#">Inicio</a>
+                        <a class="nav-link" href="#">Adopciones</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="/MiProyecto/views/Nosotros.php">Nosotros</a>
+                        <a class="nav-link" href="../Controllers/cerrar_sesion.php">Salir</a>
                     </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="/MiProyecto/views/adopciones.php">Adopción</a>
-                    </li>
-
-                    <li class="nav-item">
-                        <a class="nav-link" href="#">Eventos</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="#">Contacto</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="/MiProyecto/administrador/login.php">Administrador</a>
-                    </li>
-
+                
+                
                 </ul>
             </div>
         </div>
